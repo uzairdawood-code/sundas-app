@@ -1,447 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundas's Universe</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Apologizing to Sundas</title>
+    <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#fdf2f8',
-                            100: '#fce7f3',
-                            500: '#ec4899',
-                            600: '#db2777',
-                            700: '#be185d',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #180c1e 0%, #2e103f 50%, #1a0826 100%);
-            min-height: 100vh;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .serif-font {
+            font-family: 'Playfair Display', serif;
         }
-        .glass-panel-hover:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.85; }
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-        .floating-anim {
-            animation: float 4s ease-in-out infinite;
+        .animate-pulse-slow {
+            animation: pulse-slow 2s infinite ease-in-out;
         }
     </style>
 </head>
-<body class="text-slate-100 antialiased selection:bg-brand-500 selection:text-white pb-16">
+<body class="bg-gradient-to-br from-rose-50 via-pink-50 to-red-100 min-h-screen flex flex-col items-center justify-center p-4">
 
-    <!-- Passcode Gate Screen -->
-    <div id="auth-gate" class="fixed inset-0 z-50 bg-[#120719]/95 backdrop-blur-xl flex items-center justify-center p-4">
-        <div class="glass-panel p-8 rounded-3xl max-w-md w-full text-center space-y-6 shadow-2xl border border-white/10">
-            <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-brand-500 to-purple-600 flex items-center justify-center shadow-lg shadow-brand-500/40">
-                <i class="fa-solid fa-lock-open text-white text-2xl"></i>
-            </div>
-            <div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Sundas's Universe</h2>
-                <p class="text-xs text-slate-400 mt-1">Enter your name or passcode to enter</p>
-            </div>
-            <form onsubmit="handleAuth(event)" class="space-y-4">
-                <input type="password" id="passcode-input" placeholder="Passcode (hint: your name or secret)..." required
-                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-center text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition">
-                <button type="submit" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs tracking-wide uppercase transition shadow-lg shadow-brand-600/30">
-                    Unlock Space ✨
-                </button>
-            </form>
-            <p id="auth-error" class="text-xs text-rose-400 hidden">Incorrect passcode. Try 'Sundas' or 'sundas'.</p>
+    <!-- Top Title -->
+    <div class="text-rose-900/60 text-xs sm:text-sm font-medium tracking-widest uppercase mb-6 flex items-center gap-2">
+        <span>Apologizing to Sundas</span>
+    </div>
+
+    <!-- Main Card Container -->
+    <div class="bg-white/80 backdrop-blur-md border border-rose-100 shadow-xl rounded-3xl p-8 sm:p-10 max-w-md w-full text-center relative overflow-hidden transition-all duration-500">
+        
+        <!-- Decorative Glow Background -->
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-rose-200/40 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-pink-200/40 rounded-full blur-2xl pointer-events-none"></div>
+
+        <!-- Heart Icon -->
+        <div class="flex justify-center mb-5 text-rose-500">
+            <svg class="w-10 h-10 animate-pulse-slow" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="serif-font text-3xl sm:text-4xl font-bold text-gray-800 mb-4 tracking-tight">
+            I'm Sorry, Jan
+        </h1>
+
+        <!-- Message Body -->
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
+            Jan, I'm really sorry. I never wanted to hurt you. Please forgive me. ❤️
+        </p>
+
+        <!-- Action Button -->
+        <button id="forgiveBtn" onclick="handleForgiveness()" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-medium py-3.5 px-6 rounded-full shadow-lg shadow-rose-600/30 transition-all duration-200 flex items-center justify-center gap-2">
+            <span>Please forgive me</span>
+        </button>
+
+        <!-- Hidden Response Reveal Area -->
+        <div id="responseBox" class="hidden mt-6 p-4 bg-rose-50/80 border border-rose-200 rounded-2xl text-rose-900 text-sm sm:text-base font-medium animate-fade-in">
+            Thank you for reading, Jan. You mean a lot to me. ❤️
+        </div>
+
+        <!-- Footer Note -->
+        <div class="mt-8 text-xs text-gray-400 tracking-wide">
+            A little message, from the heart.
         </div>
     </div>
 
-    <!-- Main Dashboard Container (Hidden until unlocked) -->
-    <div id="main-app" class="hidden">
-        <!-- Top Navigation / Header -->
-        <header class="sticky top-0 z-40 glass-panel border-b border-white/10 px-6 py-4">
-            <div class="max-w-6xl mx-auto flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center shadow-lg shadow-brand-500/30">
-                        <i class="fa-solid fa-s text-white text-lg font-bold"></i>
-                    </div>
-                    <div>
-                        <h1 class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-pink-200 to-brand-300 bg-clip-text text-transparent">Sundas's Space</h1>
-                        <p class="text-xs text-slate-400">Connected with Uzair ✨</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div id="live-clock" class="text-xs font-medium px-3 py-1.5 rounded-full glass-panel text-slate-300 hidden sm:block"></div>
-                    <button onclick="triggerConfetti()" class="px-4 py-2 text-xs font-semibold rounded-xl bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg shadow-brand-600/30 flex items-center space-x-2">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <span>Sparkle</span>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content Grid -->
-        <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 space-y-8">
-
-            <!-- Welcome Hero -->
-            <section class="relative overflow-hidden rounded-3xl glass-panel p-8 sm:p-12 text-center sm:text-left shadow-2xl">
-                <div class="absolute -right-20 -top-20 w-72 h-72 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-20 -bottom-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8">
-                    <div class="space-y-4 max-w-xl">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-medium">
-                            <i class="fa-solid fa-heart text-brand-400"></i>
-                            <span id="greeting-badge">Welcome, Sundas</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-                            Hello, <span class="bg-gradient-to-r from-pink-400 via-purple-300 to-brand-400 bg-clip-text text-transparent">Sundas</span> 💖
-                        </h2>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            Your personalized space. Every mood update, memory note, or message you leave here syncs in real-time and logs notifications directly for Uzair.
-                        </p>
-                        <div class="pt-2 flex flex-wrap gap-3 justify-center sm:justify-start">
-                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 flex items-center space-x-1.5">
-                                <i class="fa-solid fa-tower-broadcast text-emerald-400"></i>
-                                <span id="sync-status">Real-time sync active</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="flex-shrink-0">
-                        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl glass-panel p-3 floating-anim flex items-center justify-center relative group">
-                            <div class="w-full h-full rounded-2xl bg-slate-900/80 flex flex-col items-center justify-center text-center p-4 border border-white/10">
-                                <i class="fa-solid fa-heart-pulse text-4xl sm:text-5xl text-brand-400 mb-2"></i>
-                                <span class="text-xs font-semibold text-white">Live Link</span>
-                                <span class="text-[10px] text-emerald-400 mt-0.5">Synced with Uzair</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Modules Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Module 1: Mood Tracker -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between glass-panel-hover transition duration-300">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-semibold text-lg flex items-center space-x-2 text-white">
-                                <i class="fa-solid fa-face-smile text-brand-400"></i>
-                                <span>Sundas's Vibe</span>
-                            </h3>
-                            <span class="text-xs text-slate-400">Syncs to Uzair</span>
-                        </div>
-                        <p class="text-xs text-slate-300 mb-6">Select how you're feeling right now:</p>
-                        
-                        <div class="grid grid-cols-2 gap-3 mb-6">
-                            <button onclick="updateMood('✨ Inspired')" class="p-3 rounded-2xl glass-panel text-left flex items-center space-x-3 transition hover:scale-[1.02]">
-                                <span class="text-xl">✨</span>
-                                <div>
-                                    <div class="text-xs font-semibold text-white">Inspired</div>
-                                    <div class="text-[10px] text-slate-400">Creative flow</div>
-                                </div>
-                            </button>
-                            <button onclick="updateMood('☕ Focused')" class="p-3 rounded-2xl glass-panel text-left flex items-center space-x-3 transition hover:scale-[1.02]">
-                                <span class="text-xl">☕</span>
-                                <div>
-                                    <div class="text-xs font-semibold text-white">Focused</div>
-                                    <div class="text-[10px] text-slate-400">In the zone</div>
-                                </div>
-                            </button>
-                            <button onclick="updateMood('💖 Loved & Happy')" class="p-3 rounded-2xl glass-panel text-left flex items-center space-x-3 transition hover:scale-[1.02]">
-                                <span class="text-xl">💖</span>
-                                <div>
-                                    <div class="text-xs font-semibold text-white">Happy</div>
-                                    <div class="text-[10px] text-slate-400">Wonderful day</div>
-                                </div>
-                            </button>
-                            <button onclick="updateMood('🌙 Relaxed')" class="p-3 rounded-2xl glass-panel text-left flex items-center space-x-3 transition hover:scale-[1.02]">
-                                <span class="text-xl">🌙</span>
-                                <div>
-                                    <div class="text-xs font-semibold text-white">Relaxed</div>
-                                    <div class="text-[10px] text-slate-400">Taking it easy</div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="p-3 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300 flex items-center justify-between">
-                        <span>Current: <strong id="current-mood-text" class="text-white">✨ Inspired</strong></span>
-                        <i class="fa-solid fa-cloud-arrow-up text-brand-400"></i>
-                    </div>
-                </div>
-
-                <!-- Module 2: Memory Jar & Notes -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between glass-panel-hover transition duration-300">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-semibold text-lg flex items-center space-x-2 text-white">
-                                <i class="fa-solid fa-jar text-amber-400"></i>
-                                <span>Memory Jar</span>
-                            </h3>
-                            <span class="text-xs text-slate-400">Notes from Uzair</span>
-                        </div>
-                        <p class="text-xs text-slate-300 mb-4">Open a memory note left for you:</p>
-
-                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 min-h-[110px] flex flex-col justify-center text-center mb-4">
-                            <p id="memory-display" class="text-xs text-purple-100 italic">"Sundas, your smile makes even ordinary days feel exceptionally special."</p>
-                        </div>
-                    </div>
-
-                    <button onclick="nextMemory()" class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-xs transition border border-white/10 flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-shuffle text-brand-400"></i>
-                        <span>Read Another Note</span>
-                    </button>
-                </div>
-
-                <!-- Module 3: Secret Notes & Message to Uzair -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between glass-panel-hover transition duration-300 md:col-span-2 lg:col-span-1">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-semibold text-lg flex items-center space-x-2 text-white">
-                                <i class="fa-solid fa-envelope-open-text text-pink-400"></i>
-                                <span>Note to Uzair</span>
-                            </h3>
-                            <span class="text-xs text-slate-400">Real-time Log</span>
-                        </div>
-                        <p class="text-xs text-slate-300 mb-4">Send a quick note or thought directly to Uzair's notification log:</p>
-
-                        <textarea id="uzair-note" rows="3" placeholder="Write a note for Uzair..."
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl p-3 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-brand-500 transition resize-none mb-3"></textarea>
-                    </div>
-
-                    <button onclick="sendNoteToUzair()" class="w-full py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-xs font-semibold transition shadow-md shadow-brand-600/30">
-                        Send to Uzair 🚀
-                    </button>
-                </div>
-
-                <!-- Module 4: Live Uzair Notification Activity Log -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between glass-panel-hover transition duration-300 md:col-span-2 lg:col-span-3">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="font-semibold text-lg flex items-center space-x-2 text-white">
-                            <i class="fa-solid fa-bell text-yellow-400"></i>
-                            <span>Uzair's Live Notification Feed</span>
-                        </h3>
-                        <span class="text-xs text-emerald-400 flex items-center space-x-1">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>Syncing Live</span>
-                        </span>
-                    </div>
-                    <p class="text-xs text-slate-300 mb-4">This feed logs every action Sundas takes (mood changes, opened notes, messages) so Uzair stays updated instantly.</p>
-
-                    <div id="notification-log" class="space-y-2 max-h-40 overflow-y-auto pr-1">
-                        <!-- Populated by Firebase / Local sync -->
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <footer class="max-w-6xl mx-auto px-6 mt-16 text-center text-xs text-slate-500">
-            <p>Crafted exclusively for Sundas & Uzair with real-time sync ✨</p>
-        </footer>
-    </div>
-
-    <!-- Firebase SDKs and App Logic -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, onSnapshot, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'sundas-uzair-space';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "demo", projectId: "demo" };
-
-        let db, auth, currentUser;
-
-        try {
-            const app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            auth = getAuth(app);
-
-            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                signInWithCustomToken(auth, __initial_auth_token).catch(() => signInAnonymously(auth));
-            } else {
-                signInAnonymously(auth);
-            }
-
-            auth.onAuthStateChanged((user) => {
-                if (user) currentUser = user;
-            });
-        } catch (e) {
-            console.log("Offline mode active");
-        }
-
-        window.logActivity = async function(actionText) {
-            const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            const logEntry = { text: actionText, time: timestamp, sender: 'Sundas' };
-
-            // Push to local storage fallback
-            let logs = JSON.parse(localStorage.getItem('uzair_notifications') || '[]');
-            logs.unshift(logEntry);
-            if (logs.length > 20) logs.pop();
-            localStorage.setItem('uzair_notifications', JSON.stringify(logs));
-            renderLogs(logs);
-
-            // Push to Firestore if available
-            if (db && currentUser) {
-                try {
-                    await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'notifications'), logEntry);
-                } catch (err) {
-                    console.log("Firestore sync notice:", err);
-                }
-            }
-        };
-
-        function renderLogs(logs) {
-            const container = document.getElementById('notification-log');
-            if (!container) return;
-            container.innerHTML = '';
-            if (logs.length === 0) {
-                container.innerHTML = `<div class="text-xs text-slate-500 text-center py-3">No notifications logged yet.</div>`;
-                return;
-            }
-            logs.forEach(log => {
-                const item = document.createElement('div');
-                item.className = "flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 text-xs";
-                item.innerHTML = `
-                    <div class="flex items-center space-x-2.5">
-                        <i class="fa-solid fa-circle-dot text-brand-400 text-[10px]"></i>
-                        <span class="text-slate-200">${log.text}</span>
-                    </div>
-                    <span class="text-[10px] text-slate-400">${log.time}</span>
-                `;
-                container.appendChild(item);
-            });
-        }
-
-        // Initial render from storage
-        const initialLogs = JSON.parse(localStorage.getItem('uzair_notifications') || '[{"text": "Sundas opened her personal universe", "time": "Just now", "sender": "Sundas"}]');
-        renderLogs(initialLogs);
-
-        // Firestore real-time listener if ready
-        setTimeout(() => {
-            if (db) {
-                try {
-                    const q = query(collection(db, 'artifacts', appId, 'public', 'data', 'notifications'));
-                    onSnapshot(q, (snapshot) => {
-                        let remoteLogs = [];
-                        snapshot.forEach(doc => remoteLogs.push(doc.data()));
-                        if (remoteLogs.length > 0) {
-                            remoteLogs.sort((a, b) => b.time.localeCompare(a.time));
-                            renderLogs(remoteLogs);
-                        }
-                    }, (err) => console.log("Snapshot error:", err));
-                } catch (e) {}
-            }
-        }, 1500);
-    </script>
-
-    <!-- Global App Functions -->
+    <!-- Script to handle interactions and optional Telegram Alerts -->
     <script>
-        function handleAuth(e) {
-            e.preventDefault();
-            const val = document.getElementById('passcode-input').value.trim().toLowerCase();
-            if (val === 'sundas' || val === 'uzair' || val === '1234' || val === 'secret') {
-                document.getElementById('auth-gate').classList.add('hidden');
-                document.getElementById('main-app').classList.remove('hidden');
-                if (typeof window.logActivity === 'function') {
-                    window.logActivity("Sundas unlocked her universe successfully.");
-                }
-            } else {
-                document.getElementById('auth-error').classList.remove('hidden');
-            }
-        }
+        function handleForgiveness() {
+            const responseBox = document.getElementById('responseBox');
+            const btn = document.getElementById('forgiveBtn');
+            
+            // Show the hidden response box
+            responseBox.classList.remove('hidden');
+            btn.innerText = "Thank you ❤️";
+            btn.classList.remove('bg-rose-600', 'hover:bg-rose-700');
+            btn.classList.add('bg-emerald-600', 'cursor-default');
+            btn.disabled = true;
 
-        function updateClock() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            const dateString = now.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
-            const clockEl = document.getElementById('live-clock');
-            if (clockEl) clockEl.innerHTML = `<i class="fa-regular fa-clock mr-1.5 text-brand-400"></i> ${dateString} • ${timeString}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        function updateMood(moodText) {
-            document.getElementById('current-mood-text').innerText = moodText;
-            if (typeof window.logActivity === 'function') {
-                window.logActivity(`Sundas updated her mood to: ${moodText}`);
-            }
-            triggerConfetti();
-        }
-
-        const memories = [
-            "Sundas, your smile makes even ordinary days feel exceptionally special.",
-            "Remember that whatever challenges come your way, you handle them with absolute grace.",
-            "Uzair left this note: 'Sundas brings the best energy into every single room she enters.'",
-            "Your creativity and brilliance never cease to amaze me. Keep shining!"
-        ];
-        let memoryIndex = 0;
-
-        function nextMemory() {
-            memoryIndex = (memoryIndex + 1) % memories.length;
-            const box = document.getElementById('memory-display');
-            box.style.opacity = 0;
-            setTimeout(() => {
-                box.innerText = `"${memories[memoryIndex]}"`;
-                box.style.opacity = 1;
-            }, 150);
-            if (typeof window.logActivity === 'function') {
-                window.logActivity("Sundas opened a memory jar note.");
-            }
-        }
-
-        function sendNoteToUzair() {
-            const input = document.getElementById('uzair-note');
-            const val = input.value.trim();
-            if (val !== '') {
-                if (typeof window.logActivity === 'function') {
-                    window.logActivity(`Sundas sent a note to Uzair: "${val}"`);
-                }
-                input.value = '';
-                // Show temporary success feedback
-                const btn = event.target;
-                const orig = btn.innerText;
-                btn.innerText = "Sent Successfully! 💖";
-                btn.classList.add('bg-emerald-600');
-                setTimeout(() => {
-                    btn.innerText = orig;
-                    btn.classList.remove('bg-emerald-600');
-                }, 2000);
-            }
-        }
-
-        function triggerConfetti() {
-            const header = document.querySelector('header');
-            if (header) {
-                header.classList.add('border-brand-500/50');
-                setTimeout(() => header.classList.remove('border-brand-500/50'), 600);
-            }
+            // Optional: If you want notifications pushed to your Telegram bot when she clicks it, 
+            // you can uncomment and insert your Telegram Bot Token & Chat ID below:
+            /*
+            const botToken = "YOUR_BOT_TOKEN";
+            const chatId = "YOUR_CHAT_ID";
+            const text = encodeURIComponent("❤️ Sundas just clicked 'Please forgive me' on her app!");
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${text}`)
+                .catch(err => console.log('Notification sent error', err));
+            */
         }
     </script>
 </body>
